@@ -47,7 +47,7 @@
 #include <string>
 #include <vector>
 
-#define MAX_PINS_PER_CHIP 32
+#define MAX_PINS_PER_CHIP 64
 
 enum gpio_polarity {
   GPIO_ACTIVE_HIGH = 0,

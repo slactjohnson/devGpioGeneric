@@ -1,4 +1,4 @@
-record(bo, "$(P)GPIO$(N)_OUT")
+record(bo, "$(P)GPIO$(NCHIP)_L$(N)_OUT")
 {
     field(DTYP, "devGpio")
     field(OUT, "@$(CHIP),$(N)")
@@ -6,7 +6,7 @@ record(bo, "$(P)GPIO$(N)_OUT")
     field(ONAM, "ON")
 }
 
-record(bi, "$(P)GPIO$(N)_IN")
+record(bi, "$(P)GPIO$(NCHIP)_L$(N)_IN")
 {
     field(DTYP, "devGpio")
     field(INP, "@$(CHIP),$(N)")
@@ -15,7 +15,7 @@ record(bi, "$(P)GPIO$(N)_IN")
     field(SCAN, "I/O Intr")
 }
 
-record(mbbo, "$(P)GPIO$(N)_POLARITY")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(N)_POLARITY")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Polarity for output pins")
@@ -28,7 +28,7 @@ record(mbbo, "$(P)GPIO$(N)_POLARITY")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_TYPE")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(N)_TYPE")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Pin type: output or input")
@@ -43,7 +43,7 @@ record(mbbo, "$(P)GPIO$(N)_TYPE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_EDGE")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(N)_EDGE")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Edge type for input pins")
@@ -56,7 +56,7 @@ record(mbbo, "$(P)GPIO$(N)_EDGE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_DRIVE")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(N)_DRIVE")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Drive for output pins")
@@ -71,7 +71,7 @@ record(mbbo, "$(P)GPIO$(N)_DRIVE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_BIAS")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(N)_BIAS")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Bias for inputs (pull up/down)")
@@ -85,7 +85,7 @@ record(mbbo, "$(P)GPIO$(N)_BIAS")
     field(TWVL, "1")
 }
 
-record(bo, "$(P)GPIO$(N)_RESET")
+record(bo, "$(P)GPIO$(NCHIP)_L$(N)_RESET")
 {
     field(DTYP, "devGpioCfgBo")
     field(DESC, "Reset latched input values")
@@ -93,7 +93,7 @@ record(bo, "$(P)GPIO$(N)_RESET")
     field(VAL, "0")
 }
 
-record(longout, "$(P)GPIO$(N)_DEBOUNCE")
+record(longout, "$(P)GPIO$(NCHIP)_L$(N)_DEBOUNCE")
 {
     field(DTYP, "devGpioCfgLo")
     field(DESC, "Debounce period (us)")

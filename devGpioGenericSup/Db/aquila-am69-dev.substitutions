@@ -1,0 +1,16 @@
+
+# Exposes GPIO_01-GPIO_08 on the Toradex Aquila AM69 development board
+# N: line number
+# NCHIP: chip number
+# CHIP: chip path
+file pin.template {
+    pattern { LINE, NCHIP, CHIP }
+            { 34,   1,     "/dev/gpiochip1" }
+            { 17,   1,     "/dev/gpiochip1" }
+            { 29,   1,     "/dev/gpiochip1" }
+            { 17,   0,     "/dev/gpiochip0" }
+            { 29,   0,     "/dev/gpiochip0" }
+            { 30,   0,     "/dev/gpiochip0" }
+            { 31,   0,     "/dev/gpiochip0" }
+            { 38,   0,     "/dev/gpiochip0" }
+}

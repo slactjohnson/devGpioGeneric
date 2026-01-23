@@ -1,6 +1,6 @@
 
 # Exposes GPIO_01-GPIO_08 on the Toradex Aquila AM69 development board
-# N: line number
+# LINE: line number
 # NCHIP: chip number
 # CHIP: chip path
 file pin.template {

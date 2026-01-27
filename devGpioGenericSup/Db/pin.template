@@ -43,19 +43,6 @@ record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_TYPE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_EDGE")
-{
-    field(DTYP, "devGpioCfg")
-    field(DESC, "Edge type for input pins")
-    field(OUT, "@$(CHIP),$(LINE),edge")
-    field(VAL, "0")
-    field(ZRST, "Rising")
-    field(ZRVL, "0")
-    field(ONST, "Falling")
-    field(ONVL, "1")
-    field(PINI, "YES")
-}
-
 record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_DRIVE")
 {
     field(DTYP, "devGpioCfg")

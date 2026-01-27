@@ -60,11 +60,6 @@ enum gpio_type {
   GPIO_TYPE_INPUT_LATCHED,
 };
 
-enum gpio_edge {
-  GPIO_EDGE_RISING = 0,
-  GPIO_EDGE_FALLING,
-};
-
 enum gpio_bias {
   GPIO_BIAS_NONE = 0,
   GPIO_BIAS_PULL_DOWN,
@@ -90,7 +85,6 @@ struct gpio_pin {
   int value = VAL_NONE;  /* value, set by watch events */
   enum gpio_polarity polarity = GPIO_ACTIVE_HIGH;
   enum gpio_type type = GPIO_TYPE_INPUT;
-  enum gpio_edge edge = GPIO_EDGE_RISING;
   enum gpio_bias bias = GPIO_BIAS_NONE;
   enum gpio_drive drive = GPIO_DRIVE_PUSH_PULL;
   uint32_t debounce_us = 0; /* debounce period, us */
@@ -112,7 +106,6 @@ struct gpio_dpvt {
 };
 
 enum gpio_cfg_param {
-  GPIO_CFG_EDGE,
   GPIO_CFG_POLARITY,
   GPIO_CFG_TYPE,
   GPIO_CFG_DRIVE,
@@ -196,7 +189,6 @@ gpio_find_or_add_pin(gpio_chip* chip, int line)
   pin.type = GPIO_TYPE_INPUT;
   pin.polarity = GPIO_ACTIVE_HIGH;
   pin.line = line;
-  pin.edge = GPIO_EDGE_RISING;
   pin.fd = -1;
 
   return line;
@@ -674,9 +666,7 @@ devGpioCfgMbbo_InitRecord(dbCommon* precord)
   }
   
   enum gpio_cfg_param p;
-  if (!strcmp(param, "edge"))
-    p = GPIO_CFG_EDGE;
-  else if (!strcmp(param, "polarity"))
+  if (!strcmp(param, "polarity"))
     p = GPIO_CFG_POLARITY;
   else if (!strcmp(param, "type"))
     p = GPIO_CFG_TYPE;
@@ -707,9 +697,6 @@ devGpioCfgMbbo_WriteRecord(mbboRecord* precord)
   auto& p = dpvt->chip->pins[dpvt->pin];
 
   switch (dpvt->param) {
-  case GPIO_CFG_EDGE:
-    p.edge = static_cast<gpio_edge>(precord->rval);
-    break;
   case GPIO_CFG_POLARITY:
     p.polarity = static_cast<gpio_polarity>(precord->rval);
     break;

@@ -5,6 +5,7 @@ EPICS device support for generic GPIO devices on Linux using the [chardev interf
 ## Supported Devices
 
 * Raspberry Pi 5
+* TI Aquila AM69 SoM
 
 Other devices supporting the Linux GPIO driver will work, but need DB templates written for them.
 

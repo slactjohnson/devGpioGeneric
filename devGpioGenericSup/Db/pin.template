@@ -82,7 +82,8 @@ record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_BIAS")
     field(ONST, "Pull Down")
     field(ONVL, "1")
     field(TWST, "Pull Up")
-    field(TWVL, "1")
+    field(TWVL, "2")
+    field(PINI, "YES")
 }
 
 record(bo, "$(P)GPIO$(NCHIP)_L$(LINE)_RESET")

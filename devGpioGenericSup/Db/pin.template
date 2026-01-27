@@ -1,25 +1,25 @@
-record(bo, "$(P)GPIO$(N)_OUT")
+record(bo, "$(P)GPIO$(NCHIP)_L$(LINE)_OUT")
 {
     field(DTYP, "devGpio")
-    field(OUT, "@$(CHIP),$(N)")
+    field(OUT, "@$(CHIP),$(LINE)")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
 }
 
-record(bi, "$(P)GPIO$(N)_IN")
+record(bi, "$(P)GPIO$(NCHIP)_L$(LINE)_IN")
 {
     field(DTYP, "devGpio")
-    field(INP, "@$(CHIP),$(N)")
+    field(INP, "@$(CHIP),$(LINE)")
     field(ZNAM, "OFF")
     field(ONAM, "ON")
     field(SCAN, "I/O Intr")
 }
 
-record(mbbo, "$(P)GPIO$(N)_POLARITY")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_POLARITY")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Polarity for output pins")
-    field(OUT, "@$(CHIP),$(N),polarity")
+    field(OUT, "@$(CHIP),$(LINE),polarity")
     field(VAL, "0")
     field(ZRST, "Active High")
     field(ZRVL, "0")
@@ -28,11 +28,11 @@ record(mbbo, "$(P)GPIO$(N)_POLARITY")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_TYPE")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_TYPE")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Pin type: output or input")
-    field(OUT, "@$(CHIP),$(N),type")
+    field(OUT, "@$(CHIP),$(LINE),type")
     field(VAL, "0")
     field(ZRST, "Input")
     field(ZRVL, "0")
@@ -43,11 +43,11 @@ record(mbbo, "$(P)GPIO$(N)_TYPE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_EDGE")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_EDGE")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Edge type for input pins")
-    field(OUT, "@$(CHIP),$(N),edge")
+    field(OUT, "@$(CHIP),$(LINE),edge")
     field(VAL, "0")
     field(ZRST, "Rising")
     field(ZRVL, "0")
@@ -56,11 +56,11 @@ record(mbbo, "$(P)GPIO$(N)_EDGE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_DRIVE")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_DRIVE")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Drive for output pins")
-    field(OUT, "@$(CHIP),$(N),drive")
+    field(OUT, "@$(CHIP),$(LINE),drive")
     field(VAL, "0")
     field(ZRST, "Push/Pull")
     field(ZRVL, "0")
@@ -71,11 +71,11 @@ record(mbbo, "$(P)GPIO$(N)_DRIVE")
     field(PINI, "YES")
 }
 
-record(mbbo, "$(P)GPIO$(N)_BIAS")
+record(mbbo, "$(P)GPIO$(NCHIP)_L$(LINE)_BIAS")
 {
     field(DTYP, "devGpioCfg")
     field(DESC, "Bias for inputs (pull up/down)")
-    field(OUT, "@$(CHIP),$(N),bias")
+    field(OUT, "@$(CHIP),$(LINE),bias")
     field(VAL, "0")
     field(ZRST, "None")
     field(ZRVL, "0")
@@ -85,19 +85,19 @@ record(mbbo, "$(P)GPIO$(N)_BIAS")
     field(TWVL, "1")
 }
 
-record(bo, "$(P)GPIO$(N)_RESET")
+record(bo, "$(P)GPIO$(NCHIP)_L$(LINE)_RESET")
 {
     field(DTYP, "devGpioCfgBo")
     field(DESC, "Reset latched input values")
-    field(OUT, "@$(CHIP),$(N),reset")
+    field(OUT, "@$(CHIP),$(LINE),reset")
     field(VAL, "0")
 }
 
-record(longout, "$(P)GPIO$(N)_DEBOUNCE")
+record(longout, "$(P)GPIO$(NCHIP)_L$(LINE)_DEBOUNCE")
 {
     field(DTYP, "devGpioCfgLo")
     field(DESC, "Debounce period (us)")
-    field(OUT, "@$(CHIP),$(N),debounce")
+    field(OUT, "@$(CHIP),$(LINE),debounce")
     field(VAL, "0")
     field(PINI, "YES")
 }
